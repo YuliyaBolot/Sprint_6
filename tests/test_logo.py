@@ -10,7 +10,7 @@ class TestLogo:
         yandex_logo = MainPage(driver)
         yandex_logo.go_to_site(Constants.URL)
         yandex_logo.click_on_yandex_logo()
-        yandex_logo.go_to_site(Constants.URL_DZEN)
+        yandex_logo.switch_to_window()
         dzen = DzenPage(driver)
         dzen.loading_dzen_page()
         assert Constants.URL_DZEN in driver.current_url

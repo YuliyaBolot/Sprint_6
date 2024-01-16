@@ -34,6 +34,9 @@ class MainPage(BasePage):
     def click_on_scooter_logo(self):
         return self.find_element_located_click(MainLocators.LOGO_SCOOTER)
 
+    def switch_to_window(self):
+        return self.driver.switch_to.window(self.driver.window_handles[1])
+
     def scroll_to_questions(self):
         questions_lst = self.find_element_located(MainLocators.QUESTIONS_LST, time=20)
         self.driver.execute_script("arguments[0].scrollIntoView();", questions_lst)
@@ -49,4 +52,3 @@ class MainPage(BasePage):
 
     def check_response(self, response):
         return self.find_element_located(response).text
-
