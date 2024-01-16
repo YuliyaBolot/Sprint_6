@@ -8,8 +8,6 @@ from constants import ResponseText
 
 class TestQuestionPage:
 
-    driver = None
-
     pay = (MainLocators.PAY_QUESTION, MainLocators.PAY_RESPONSE, ResponseText.PAY_RESPONSE_TEXT)
     quantity = (MainLocators.QUANTITY_QUESTION, MainLocators.QUANTITY_RESPONSE, ResponseText.QUANTITY_RESPONSE_TEXT)
     rent = (MainLocators.RENT_QUESTION, MainLocators.RENT_RESPONSE, ResponseText.RENT_RESPONSE_TEXT)

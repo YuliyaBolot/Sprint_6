@@ -23,6 +23,11 @@ class MainPage(BasePage):
     def click_on_down_order_button(self):
         return self.find_element_located_click(MainLocators.DOWN_ORDER_BUTTON)
 
+    def down_order_button(self):
+        self.click_on_cookie_button()
+        self.scroll_to_down_order_button()
+        self.click_on_down_order_button()
+
     def click_on_yandex_logo(self):
         return self.find_element_located_click(MainLocators.LOGO_YANDEX)
 

@@ -35,17 +35,6 @@ class OrderPage(BasePage):
     def click_on_next_button(self):
         return self.find_element_located_click(OrderLocators.NEXT_BUTTON)
 
-    def complete_the_first_form(self, name, surname, address, phone_number):
-        self.set_name(name)
-        self.set_surname(surname)
-        self.set_address(address)
-        self.click_on_subway_station_field()
-        self.wait_for_subway_station_lst()
-        self.scroll_to_subway_station()
-        self.choose_subway_station()
-        self.set_phone_number(phone_number)
-        self.click_on_next_button()
-
     def loading_rent_form(self):
         return self.find_element_located(OrderLocators.RENT_FORM)
 
@@ -60,16 +49,6 @@ class OrderPage(BasePage):
 
     def choose_the_last_date(self):
         return self.find_element_located_click(OrderLocators.LAST_DATE)
-
-    def complete_delivery_time_field_with_first_date(self):
-        self.click_on_delivery_time_field()
-        self.loading_month_calendar()
-        self.choose_the_first_date()
-
-    def complete_delivery_time_field_with_last_date(self):
-        self.click_on_delivery_time_field()
-        self.loading_month_calendar()
-        self.choose_the_last_date()
 
     def click_on_rent_period_field(self):
         return self.find_element_located_click(OrderLocators.RENT_PERIOD_FIELD)
@@ -87,17 +66,6 @@ class OrderPage(BasePage):
     def choose_rent_period_seven_day(self):
         return self.find_element_located_click(OrderLocators.RENT_PERIOD_SEVEN_DAY)
 
-    def complete_rent_period_field_with_day(self):
-        self.click_on_rent_period_field()
-        self.loading_rent_period_lst()
-        self.choose_rent_period_day()
-
-    def complete_rent_period_field_with_seven_day(self):
-        self.click_on_rent_period_field()
-        self.loading_rent_period_lst()
-        self.scroll_to_rent_period_seven_day()
-        self.choose_rent_period_seven_day()
-
     def choose_black_scooter(self):
         return self.find_element_located_click(OrderLocators.BLACK_PEARL)
 
@@ -109,6 +77,48 @@ class OrderPage(BasePage):
 
     def click_to_complete_order(self):
         return self.find_element_located_click(OrderLocators.ORDER_BUTTON)
+
+    def complete_order_form_through_up_order_button(self, name, surname, address, phone_number, comment):
+        self.set_name(name)
+        self.set_surname(surname)
+        self.set_address(address)
+        self.click_on_subway_station_field()
+        self.wait_for_subway_station_lst()
+        self.scroll_to_subway_station()
+        self.choose_subway_station()
+        self.set_phone_number(phone_number)
+        self.click_on_next_button()
+        self.loading_rent_form()
+        self.click_on_delivery_time_field()
+        self.loading_month_calendar()
+        self.choose_the_first_date()
+        self.click_on_rent_period_field()
+        self.loading_rent_period_lst()
+        self.choose_rent_period_day()
+        self.choose_black_scooter()
+        self.set_comment(comment)
+        self.click_to_complete_order()
+
+    def complete_order_form_through_down_order_button(self, name, surname, address, phone_number):
+        self.set_name(name)
+        self.set_surname(surname)
+        self.set_address(address)
+        self.click_on_subway_station_field()
+        self.wait_for_subway_station_lst()
+        self.scroll_to_subway_station()
+        self.choose_subway_station()
+        self.set_phone_number(phone_number)
+        self.click_on_next_button()
+        self.loading_rent_form()
+        self.click_on_delivery_time_field()
+        self.loading_month_calendar()
+        self.choose_the_last_date()
+        self.click_on_rent_period_field()
+        self.loading_rent_period_lst()
+        self.scroll_to_rent_period_seven_day()
+        self.choose_rent_period_seven_day()
+        self.choose_gray_scooter()
+        self.click_to_complete_order()
 
     def loading_confirmation_window(self):
         return self.find_element_located(OrderLocators.CONFIRMATION_WINDOW)

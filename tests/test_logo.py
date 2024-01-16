@@ -5,8 +5,6 @@ from constants import Constants
 
 class TestLogo:
 
-    driver = None
-
     @allure.description('Проверка перехода на страницу Яндекс Дзена через логотип "Яндекс"')
     def test_yandex_logo(self, driver):
         yandex_logo = MainPage(driver)
